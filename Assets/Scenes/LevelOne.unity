@@ -287,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 588725644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.38709432, w: 0.9220401}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.054, y: 0.055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -355,7 +355,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1599555183, guid: 3a39d8d50c91eec4a8a77a98784f1fda, type: 3}
+  m_Sprite: {fileID: -362552305, guid: 5d278a2e99789ad488673e4507541fe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -483,6 +483,8 @@ MonoBehaviour:
   _speed: 1
   horizontal: 0
   vertical: 0
+  _staffRightPosition: {x: 0.35, y: -0.026, z: 0.068}
+  _staffLeftPosition: {x: -0.35, y: -0.026, z: 0.068}
 --- !u!50 &1059633751
 Rigidbody2D:
   serializedVersion: 4
@@ -570,6 +572,7 @@ Transform:
   m_Children:
   - {fileID: 1995060990}
   - {fileID: 519420032}
+  - {fileID: 1399720698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059633754
@@ -655,8 +658,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016030073, y: -0.048090696}
-  m_Size: {x: 0.1345098, y: 0.86534595}
+  m_Offset: {x: 0.06525568, y: -0.011187234}
+  m_Size: {x: 0.13303454, y: 0.7915388}
   m_Direction: 0
 --- !u!4 &1399720698
 Transform:
@@ -666,14 +669,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399720695}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.32984832, w: 0.94403404}
-  m_LocalPosition: {x: 5.536, y: 1.534, z: -0.040092114}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.16286686, w: 0.9866481}
+  m_LocalPosition: {x: 0.35, y: -0.026, z: 0.068139926}
+  m_LocalScale: {x: 1.3294, y: 1.3294, z: 1.3294}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 588725645}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -38.519}
+  m_Father: {fileID: 1059633753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.747}
 --- !u!1 &1995060989
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,4 +789,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 619394802}
   - {fileID: 1059633753}
-  - {fileID: 1399720698}
