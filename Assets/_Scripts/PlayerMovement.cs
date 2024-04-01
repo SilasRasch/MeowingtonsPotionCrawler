@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [field: SerializeField]
     private float _speed = 1f;
     private float _actualSpeed;
-    public int Lives = 3; // Should be moved
-    public int Points = 0;
 
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidBody;
@@ -36,14 +34,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-
-        if (Lives <= 0)
-            gameObject.SetActive(false);
-
     }
 
     private void FixedUpdate()
     {
+        _rigidBody.velocity = Vector2.zero;
         _actualSpeed = _speed;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -54,29 +49,29 @@ public class PlayerMovement : MonoBehaviour
         _rigidBody.velocity = new Vector2(horizontal * _actualSpeed, vertical * _actualSpeed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Monster")
-        {
-            Lives--;
-        }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Monster")
+    //    {
+    //        Lives--;
+    //    }
 
-        if (collision.gameObject.tag == "Heart")
-        {
-            Lives++;
-            collision.gameObject.SetActive(false);
-        }
+    //    if (collision.gameObject.tag == "Heart")
+    //    {
+    //        Lives++;
+    //        collision.gameObject.SetActive(false);
+    //    }
 
-        if (collision.gameObject.tag == "Coin")
-        {
-            Points++;
-            collision.gameObject.SetActive(false);
-        }
+    //    if (collision.gameObject.tag == "Coin")
+    //    {
+    //        Points++;
+    //        collision.gameObject.SetActive(false);
+    //    }
 
-        if (collision.gameObject.tag == "SpeedPotion")
-        {
-            _speed += 1;
-            collision.gameObject.SetActive(false);
-        }
-    }
+    //    if (collision.gameObject.tag == "SpeedPotion")
+    //    {
+    //        _speed += 1;
+    //        collision.gameObject.SetActive(false);
+    //    }
+    //}
 }

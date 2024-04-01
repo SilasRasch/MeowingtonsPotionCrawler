@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
+
+public class AnimationScript : MonoBehaviour
+{
+    private Animator _animator;
+    private Rigidbody2D _rb;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        _animator = GetComponentInChildren<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        _animator.SetFloat("Moving", 0);
+
+        // Animation
+        if (_rb.velocity != Vector2.zero)
+        {
+            _animator.SetFloat("Moving", 1);
+        }
+    }
+}
