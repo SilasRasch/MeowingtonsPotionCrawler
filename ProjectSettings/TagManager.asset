@@ -50,6 +50,9 @@ TagManager:
   - name: Walls
     uniqueID: 933255835
     locked: 0
+  - name: Collisions
+    uniqueID: 1246983133
+    locked: 0
   - name: Player
     uniqueID: 3001772281
     locked: 0
