@@ -54,7 +54,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidBody.velocity = Vector2.zero;
+        //_rigidBody.velocity = Vector2.zero;
+        Debug.Log(_rigidBody.velocity);
         _actualSpeed = _speed;
 
         if (Input.GetKey(KeyCode.LeftShift))
