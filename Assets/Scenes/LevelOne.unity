@@ -22322,7 +22322,7 @@ GameObject:
   - component: {fileID: 488799906}
   - component: {fileID: 488799908}
   - component: {fileID: 488799907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22373,7 +22373,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488799905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -22688,7 +22688,7 @@ GameObject:
   - component: {fileID: 744214867}
   - component: {fileID: 744214869}
   - component: {fileID: 744214868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30674,7 +30674,7 @@ GameObject:
   - component: {fileID: 841432016}
   - component: {fileID: 841432018}
   - component: {fileID: 841432017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30831,7 +30831,7 @@ GameObject:
   - component: {fileID: 1365716574}
   - component: {fileID: 1365716573}
   - component: {fileID: 1365716572}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40142,7 +40142,7 @@ GameObject:
   - component: {fileID: 1647550745}
   - component: {fileID: 1647550744}
   - component: {fileID: 1647550743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -40260,7 +40260,7 @@ GameObject:
   - component: {fileID: 1869310949}
   - component: {fileID: 1869310951}
   - component: {fileID: 1869310950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
