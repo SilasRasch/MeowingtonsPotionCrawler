@@ -45,7 +45,8 @@ public class ChestScript : MonoBehaviour
     {
         _animator.SetBool("IsOpen", true);
         isOpen = true;
-        ItemDrop();
+        Invoke("ItemDrop", 1.15f);
+        //ItemDrop();
     }
 
     private void ItemDrop()
