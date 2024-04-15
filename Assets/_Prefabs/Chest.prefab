@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 177661164729029125}
   - component: {fileID: 1080122379709467320}
   - component: {fileID: 6893739993979782261}
+  - component: {fileID: 3793812373251520533}
   - component: {fileID: 5040178191184435772}
   m_Layer: 10
   m_Name: Chest
@@ -159,6 +160,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 0.39820445}
   m_EdgeRadius: 0
+--- !u!95 &3793812373251520533
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543154376680575594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39e6278c17423c445a20a8f2b38ecdaa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5040178191184435772
 MonoBehaviour:
   m_ObjectHideFlags: 0
