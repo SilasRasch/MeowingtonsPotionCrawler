@@ -39,7 +39,7 @@ public class ChestScript : MonoBehaviour
     {
         for(int i = 0; i < itemDrops.Count; i++)
         {
-
+            Instantiate(itemDrops[i], transform.position + new Vector3(0,1,0), Quaternion.identity);
         }
     }
 }
