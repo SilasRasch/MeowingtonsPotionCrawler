@@ -30,7 +30,6 @@ public class ChestScript : MonoBehaviour
             if (!isOpen)
             {
                 _animator.SetBool("IsOpen", true);
-                spriteRenderer.sprite = openSprite;
                 isOpen = true;
             }
         }
