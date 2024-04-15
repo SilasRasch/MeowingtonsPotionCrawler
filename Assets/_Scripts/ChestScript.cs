@@ -29,10 +29,15 @@ public class ChestScript : MonoBehaviour
         {
             if (!isOpen)
             {
-                _animator.SetBool("IsOpen", true);
-                isOpen = true;
+                OpenChest();
             }
         }
+    }
+
+    private void OpenChest()
+    {
+        _animator.SetBool("IsOpen", true);
+        isOpen = true;
     }
 
     private void ItemDrop()
