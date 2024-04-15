@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class ChestScript : MonoBehaviour
 {
-    [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    public List<GameObject> itemDrops = new List<GameObject>();
 
-    [SerializeField]
-    private Sprite openSprite, closedSprite;
 
     private bool isOpen;
     private Animator _animator;
@@ -36,6 +33,14 @@ public class ChestScript : MonoBehaviour
                 spriteRenderer.sprite = openSprite;
                 isOpen = true;
             }
+        }
+    }
+
+    private void ItemDrop()
+    {
+        for(int i = 0; i < itemDrops.Count; i++)
+        {
+
         }
     }
 }
