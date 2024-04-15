@@ -14,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal;
     public float vertical;
     public Vector3 _staffRightPosition = new Vector3(0.35f, -0.026f, 0.068f);
+    //public Quaternion _staffRightRotation = new Quaternion(0, 0, -18.747f);
     public Vector3 _staffLeftPosition = new Vector3(-0.385f, -0.008f, 0.068f);
-    public bool IsFlipped { get; set; }
+    //public Vector3 _staffLeftRotation = new Vector3(0, 180, -18.747f);
 
     // Start is called before the first frame update
     void Start()
@@ -33,16 +34,28 @@ public class PlayerMovement : MonoBehaviour
 
         if (horizontal < 0)
         {
-            FlipStaff(true);
+            _spriteRenderer.flipX = true;
+            _staff.transform.position = this.transform.position + _staffLeftPosition;
+            _staff.transform.eulerAngles = new Vector3(
+                _staff.transform.eulerAngles.x,
+                180,
+                _staff.transform.eulerAngles.z);
         }
         else if (horizontal > 0)
         {
-            FlipStaff(false);
+            _spriteRenderer.flipX = false;
+            _staff.transform.position = this.transform.position + _staffRightPosition;
+            _staff.transform.eulerAngles = new Vector3(
+                _staff.transform.eulerAngles.x,
+                0,
+                _staff.transform.eulerAngles.z);
         }
     }
 
     private void FixedUpdate()
     {
+        //_rigidBody.velocity = Vector2.zero;
+        //Debug.Log(_rigidBody.velocity);
         _actualSpeed = _speed;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -51,30 +64,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _rigidBody.velocity = new Vector2(horizontal * _actualSpeed, vertical * _actualSpeed);
-    }
-
-    private void FlipStaff(bool isFlipped)
-    {
-        if (isFlipped == true)
-        {
-            //IsFlipped = true;
-            _spriteRenderer.flipX = true;
-            _staff.transform.position = this.transform.position + _staffLeftPosition;
-            _staff.transform.eulerAngles = new Vector3(
-                _staff.transform.eulerAngles.x,
-                180,
-                _staff.transform.eulerAngles.z);
-        }
-        else
-        {
-            //IsFlipped = false;
-            _spriteRenderer.flipX = false;
-            _staff.transform.position = this.transform.position + _staffRightPosition;
-            _staff.transform.eulerAngles = new Vector3(
-                _staff.transform.eulerAngles.x,
-                0,
-                _staff.transform.eulerAngles.z);
-        }
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)
