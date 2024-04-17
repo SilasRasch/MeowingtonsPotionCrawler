@@ -9,6 +9,8 @@ public class AttackScript : MonoBehaviour
     private GameObject staff;
     private Vector3 rotation;
 
+    public float baseDamage = 20;
+
     private void Start()
     {
         staff = GameObject.Find("Player_Staff");
