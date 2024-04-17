@@ -9,7 +9,8 @@ public class Hitbox : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Damage or destroy the enemy.
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyStats>().TakeDamage(20);
         }
     }
 }
