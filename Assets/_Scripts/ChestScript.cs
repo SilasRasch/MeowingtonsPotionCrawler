@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class ChestScript : MonoBehaviour
@@ -10,6 +11,7 @@ public class ChestScript : MonoBehaviour
     public GameObject MP_Potion_Prefab;
     public GameObject Speed_Potion_Prefab;
     public GameObject Strength_Potion_Prefab;
+    private GameObject chest;
 
     private bool isOpen;
     private Animator _animator;
@@ -22,6 +24,7 @@ public class ChestScript : MonoBehaviour
         itemDrops.Add(MP_Potion_Prefab);
         itemDrops.Add(Speed_Potion_Prefab);
         itemDrops.Add(Strength_Potion_Prefab);
+        chest = gameObject;
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class ChestScript : MonoBehaviour
         _animator.SetBool("IsOpen", true);
         isOpen = true;
         Invoke("ItemDrop", 1.15f);
+        Invoke("DespawnChest", 1f);
         //ItemDrop();
     }
 
@@ -57,5 +61,11 @@ public class ChestScript : MonoBehaviour
         //}
         int randomPotion = Random.Range(0, itemDrops.Count);
         Instantiate(itemDrops[randomPotion], transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+    }
+
+    private void DespawnChest()
+    {
+        chest.gameObject.SetActive(false);
+        //Destroy(chest);
     }
 }
