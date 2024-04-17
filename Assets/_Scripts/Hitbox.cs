@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Hitbox : MonoBehaviour
 {
+    private AttackScript attackScript;
+
+    private void Start()
+    {
+        attackScript = GameObject.Find("Player").GetComponent<AttackScript>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        EnemyStats stats = collision.gameObject.GetComponent<EnemyStats>();
+
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Damage or destroy the enemy.
             //Destroy(collision.gameObject);
-            collision.gameObject.GetComponent<EnemyStats>().TakeDamage(20);
+            stats.TakeDamage(attackScript.baseDamage);
         }
     }
 }
