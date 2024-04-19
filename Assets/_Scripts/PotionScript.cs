@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PotionScript : MonoBehaviour
 {
-
+    public ChestScript chestScript;
     public PlayerStats playerStats;
     public PlayerMovement playerMovement;
     public AttackScript attackScript;
@@ -26,9 +26,6 @@ public class PotionScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ChestScript chestScript = collision.gameObject.GetComponent<ChestScript>();
-
-
         if (collision.gameObject.tag == "player")
         {
             foreach (GameObject item in chestScript.itemDrops)
@@ -43,14 +40,15 @@ public class PotionScript : MonoBehaviour
                 }
                 if(item == chestScript.Speed_Potion_Prefab)
                 {
-                    SpeedPotFunction(amount);
+                    SpeedPotFunction(duration);
                 }
                 if(item == chestScript.Strength_Potion_Prefab)
                 {
                     StrengthPotFunction();
                 }
-                item.SetActive(false);
             }
+
+            DespawnPot();
         }
     }
 
@@ -70,11 +68,13 @@ public class PotionScript : MonoBehaviour
     {
         playerMovement._speed += 1f;
         StartCoroutine(ResetSpeedAfterDuration(duration));
+        Debug.Log("You speed has been increased");
     }
 
     private void StrengthPotFunction()
     {
         attackScript.baseDamage += 5;
+        Debug.Log("Your strength has increased");
     }
 
     IEnumerator ResetSpeedAfterDuration(float duration)
@@ -82,5 +82,13 @@ public class PotionScript : MonoBehaviour
         yield return new WaitForSeconds(duration);
         playerMovement._speed = 1f;
 
+    }
+
+    private void DespawnPot()
+    {
+        foreach(GameObject potion in chestScript.itemDrops)
+        {
+            potion.SetActive(false);
+        }
     }
 }
