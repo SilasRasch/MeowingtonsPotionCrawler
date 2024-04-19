@@ -18,6 +18,8 @@ public class PlayerStats : MonoBehaviour
     {
         health = maxHealth;
         mana = maxMana;
+        TakeDamage(20);
+        UseMana(10);
     }
 
     // Update is called once per frame
