@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [field: SerializeField]
-    private float _speed = 1f;
+    public float _speed = 1f;
     private float _actualSpeed;
     private GameObject _staff;
 
