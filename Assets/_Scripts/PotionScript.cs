@@ -32,12 +32,16 @@ public class PotionScript : MonoBehaviour
 
             if (gameObject.name.Contains("HP"))
             {
-                collision.gameObject.GetComponent<PlayerStats>().Heal(10);
+                playerStats = collision.gameObject.GetComponent<PlayerStats>();
+                playerStats.maxHealth += 10;
+                playerStats.UpdateHealthBar();
                 Debug.Log("HP potion picked up");
             }
             if (gameObject.name.Contains("MP"))
             {
-                collision.gameObject.GetComponent<PlayerStats>().RestoreMana(5);
+                playerStats = collision.gameObject.GetComponent<PlayerStats>();
+                playerStats.maxMana += 10;
+                playerStats.UpdateManaBar();
                 Debug.Log("MP potion picked up");
             }
             if (gameObject.name.Contains("Speed"))

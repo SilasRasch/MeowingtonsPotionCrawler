@@ -13,9 +13,12 @@ public class PlayerStats : MonoBehaviour
     public float maxMana;
     public Slider manaBar_Slider;
 
+    private int i;
+
     // Start is called before the first frame update
     void Start()
     {
+        i = 0;
         health = maxHealth;
         mana = maxMana;
         TakeDamage(20);
@@ -25,7 +28,16 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (i == 60)
+        {
+            Heal(1);
+            RestoreMana(1);
+            i = 0;
+        }
+        else { i++; }
+
+        UpdateHealthBar();
+        UpdateManaBar();
     }
 
     public void Die()
