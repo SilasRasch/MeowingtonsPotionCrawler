@@ -5,7 +5,6 @@ using UnityEngine;
 public class PotionScript : MonoBehaviour
 {
 
-    public ChestScript chestScript;
     public PlayerStats playerStats;
     public PlayerMovement playerMovement;
     public AttackScript attackScript;
@@ -27,9 +26,31 @@ public class PotionScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ChestScript chestScript = collision.gameObject.GetComponent<ChestScript>();
+
+
         if (collision.gameObject.tag == "player")
         {
-
+            foreach (GameObject item in chestScript.itemDrops)
+            {
+                if(item == chestScript.HP_Potion_Prefab)
+                {
+                    HealPotFunction(amount);
+                }
+                if(item == chestScript.MP_Potion_Prefab)
+                {
+                    ManaPotFunction(amount);
+                }
+                if(item == chestScript.Speed_Potion_Prefab)
+                {
+                    SpeedPotFunction(amount);
+                }
+                if(item == chestScript.Strength_Potion_Prefab)
+                {
+                    StrengthPotFunction();
+                }
+                item.SetActive(false);
+            }
         }
     }
 
@@ -47,8 +68,8 @@ public class PotionScript : MonoBehaviour
 
     private void SpeedPotFunction(float duration)
     {
-        playerMovement._speed = 2f;
-
+        playerMovement._speed += 1f;
+        StartCoroutine(ResetSpeedAfterDuration(duration));
     }
 
     private void StrengthPotFunction()
@@ -59,6 +80,7 @@ public class PotionScript : MonoBehaviour
     IEnumerator ResetSpeedAfterDuration(float duration)
     {
         yield return new WaitForSeconds(duration);
+        playerMovement._speed = 1f;
 
     }
 }
