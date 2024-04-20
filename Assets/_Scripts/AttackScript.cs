@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AttackScript : MonoBehaviour
 {
-    private Animator animator;
+	[SerializeField] private AudioClip MeleeAttackSound;
+	private Animator animator;
     private CapsuleCollider2D hitbox;
     private GameObject staff;
     private Vector3 rotation;
@@ -22,6 +23,7 @@ public class AttackScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) // Attack on Space key press.
         {
+            SoundManager.instance.PlaySound(MeleeAttackSound);
             //Debug.Log("Attack");
             //animator.SetTrigger("MeleeAttack");
             Invoke("ActivateHitbox", 0.2f); // Activate hitbox after 0.2 seconds.

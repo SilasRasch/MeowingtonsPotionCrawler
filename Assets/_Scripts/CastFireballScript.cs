@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CastFireballScript : MonoBehaviour
 {
-    private Camera mainCam;
+	[SerializeField] private AudioClip fireBallSound;
+	private Camera mainCam;
     private Vector3 mousePos;
     public GameObject Projectile;
     public Transform ProjectileTransform;
@@ -21,8 +22,8 @@ public class CastFireballScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Make spawn-box follow cursor position
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+		// Make spawn-box follow cursor position
+		mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = mousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
@@ -42,7 +43,8 @@ public class CastFireballScript : MonoBehaviour
         // Fire projectile
         if (Input.GetMouseButtonDown(0) && CanFire)
         {
-            CanFire = false;
+			SoundManager.instance.PlaySound(fireBallSound);
+			CanFire = false;
             Instantiate(Projectile, ProjectileTransform.position, Quaternion.identity);
         }
     }
