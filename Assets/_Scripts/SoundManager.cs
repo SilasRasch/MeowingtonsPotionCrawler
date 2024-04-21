@@ -12,9 +12,21 @@ public class SoundManager : MonoBehaviour
 		instance = this;
 		source = GetComponent<AudioSource>();
 	}
-	public void PlaySound(AudioClip _sound)
+
+	public void PlaySound(AudioClip sound)
 	{
-		source.PlayOneShot(_sound);
+		source.PlayOneShot(sound);
 	}
 
+	public void PlayDelayedSound(AudioClip sound, float delay)
+	{
+		StartCoroutine(PlayDelayedSoundCoroutine(sound, delay));
+	}
+
+	private IEnumerator PlayDelayedSoundCoroutine(AudioClip sound, float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		PlaySound(sound);
+	}
 }
+
