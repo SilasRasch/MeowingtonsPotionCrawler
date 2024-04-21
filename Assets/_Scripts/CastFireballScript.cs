@@ -12,11 +12,15 @@ public class CastFireballScript : MonoBehaviour
     public bool CanFire;
     private float timer;
     public float timeBetweenFiring;
-    
+    private GameObject player;
+    private PlayerStats stats;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        player = GameObject.Find("Player");
+        stats = player.GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -33,7 +37,7 @@ public class CastFireballScript : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > timeBetweenFiring)
+            if (timer > timeBetweenFiring && stats.mana >= 10)
             {
                 CanFire = true;
                 timer = 0;
@@ -46,6 +50,7 @@ public class CastFireballScript : MonoBehaviour
 			SoundManager.instance.PlaySound(fireBallSound);
 			CanFire = false;
             Instantiate(Projectile, ProjectileTransform.position, Quaternion.identity);
+            stats.UseMana(10);
         }
     }
 }
