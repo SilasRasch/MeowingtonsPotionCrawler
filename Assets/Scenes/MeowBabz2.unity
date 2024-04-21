@@ -24232,7 +24232,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.60141
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -24856,6 +24856,7 @@ MonoBehaviour:
   mana: 0
   maxMana: 100
   manaBar_Slider: {fileID: 2018061246}
+  catSoundDamageTaken: {fileID: 8300000, guid: 498d13e7647456a4c9ceeda57ba1a8e2, type: 3}
 --- !u!1001 &705255506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33182,7 +33183,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293195015
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -362552305, guid: 5d278a2e99789ad488673e4507541fe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -33556,7 +33557,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293195015
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1494777737, guid: 61866b20a5aed724dad42f4e765f30b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -34099,7 +34100,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293195015
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
@@ -34351,7 +34352,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1246983133
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -44793,7 +44794,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1293195015
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1179230544, guid: 13684d461becf184c9629de14cf35dfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
