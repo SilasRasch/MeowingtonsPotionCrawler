@@ -22,4 +22,12 @@ public class EnemyAttackScript : MonoBehaviour
             stats.TakeDamage(BaseDamage);
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            stats.TakeDamage(BaseDamage * Time.deltaTime);
+        }
+    }
 }
