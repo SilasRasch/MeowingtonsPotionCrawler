@@ -22,7 +22,7 @@ public class EnemyStats : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-    }
+	}
 
     public void TakeDamage(float damage)
     {
