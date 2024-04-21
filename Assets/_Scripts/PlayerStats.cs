@@ -23,7 +23,7 @@ public class PlayerStats : MonoBehaviour
 	void Start()
     {
         timer = 0;
-        dmgSoundTimer = 1.5f;
+        dmgSoundTimer = 1f;
         health = maxHealth;
         mana = maxMana;
     }
@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        dmgSoundTimer += Time.deltaTime;
 
         if (timer >= 1)
         {
@@ -59,9 +60,7 @@ public class PlayerStats : MonoBehaviour
         UpdateHealthBar();
 
         // Sound
-        dmgSoundTimer += Time.deltaTime;
-
-        if (dmgSoundTimer > 1.5f)
+        if (dmgSoundTimer >= 1f)
         {
             SoundManager.instance.PlaySound(catSoundDamageTaken);
             dmgSoundTimer = 0;
