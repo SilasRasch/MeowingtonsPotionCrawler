@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -47,6 +49,15 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         UpdateHealthBar();
+
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 
     public void TakeDamage(float damage)
