@@ -15,8 +15,10 @@ public class PlayerStats : MonoBehaviour
 
     private int i;
 
-    // Start is called before the first frame update
-    void Start()
+	[SerializeField] private AudioClip catSoundDamageTaken;
+
+	// Start is called before the first frame update
+	void Start()
     {
         i = 0;
         health = maxHealth;
@@ -53,7 +55,8 @@ public class PlayerStats : MonoBehaviour
             Die();
         }
         UpdateHealthBar();
-    }
+		SoundManager.instance.PlaySound(catSoundDamageTaken);
+	}
 
     public void Heal(float healAmount)
     {
