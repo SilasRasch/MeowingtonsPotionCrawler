@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float Speed = 1f;
-    public int MaxDistance = 1;
+    public int MaxDistance = 6;
     public float MinDistance = 0.1f;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
