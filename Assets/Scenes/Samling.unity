@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 30433518}
   - component: {fileID: 30433517}
   - component: {fileID: 30433516}
+  - component: {fileID: 30433522}
   m_Layer: 9
   m_Name: TroldeBoss
   m_TagString: Enemy
@@ -345,6 +346,19 @@ Transform:
   - {fileID: 935105001}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30433522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30433515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1e977d4630d4049beb0da377b550a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseDamage: 10
 --- !u!1001 &37103003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23946,6 +23960,7 @@ GameObject:
   - component: {fileID: 466861411}
   - component: {fileID: 466861412}
   - component: {fileID: 466861413}
+  - component: {fileID: 466861414}
   m_Layer: 8
   m_Name: HitBox
   m_TagString: PlayerStaff
@@ -24015,6 +24030,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebd73e8e7c87d548aac36bc245cce0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &466861414
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466861410}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 15863
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &488799905
 GameObject:
   m_ObjectHideFlags: 0
