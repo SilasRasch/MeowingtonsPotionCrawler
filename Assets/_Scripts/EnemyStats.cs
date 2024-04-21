@@ -6,9 +6,9 @@ public class EnemyStats : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-
-    // Start is called before the first frame update
-    void Start()
+	[SerializeField] private AudioClip enemyDamageTaken;
+	// Start is called before the first frame update
+	void Start()
     {
         health = maxHealth;
     }
@@ -31,7 +31,8 @@ public class EnemyStats : MonoBehaviour
         {
             Die();
         }
-    }
+		SoundManager.instance.PlaySound(enemyDamageTaken);
+	}
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{

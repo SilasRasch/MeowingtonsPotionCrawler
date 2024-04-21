@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 80
+  enemyDamageTaken: {fileID: 8300000, guid: dae1f35e40e017e4c86314ba2006e275, type: 3}
 --- !u!114 &487377321745202363
 MonoBehaviour:
   m_ObjectHideFlags: 0
