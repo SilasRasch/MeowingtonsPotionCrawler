@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PotionScript : MonoBehaviour
 {
-    private ChestScript chestScript;
+	[SerializeField] private AudioClip potionSound;
+	[SerializeField] private AudioClip catSoundPotion;
+	private ChestScript chestScript;
     private PlayerStats playerStats;
     private PlayerMovement playerMovement;
     private AttackScript attackScript;
@@ -26,8 +28,10 @@ public class PotionScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+			SoundManager.instance.PlaySound(potionSound);
+			SoundManager.instance.PlayDelayedSound(catSoundPotion, 0.5f);
 
-            if (gameObject.name.Contains("HP"))
+			if (gameObject.name.Contains("HP"))
             {
                 playerStats = collision.gameObject.GetComponent<PlayerStats>();
                 playerStats.maxHealth += 10;
@@ -58,8 +62,6 @@ public class PotionScript : MonoBehaviour
 
             Debug.Log("Potion destroyed");
             Destroy(gameObject);
-            
-        }
+		}
     }
-
 }

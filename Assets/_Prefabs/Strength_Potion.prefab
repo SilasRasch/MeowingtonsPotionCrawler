@@ -133,9 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff0e37db852f6b4b9066f4b77843808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestScript: {fileID: 0}
-  playerStats: {fileID: 0}
-  playerMovement: {fileID: 0}
-  attackScript: {fileID: 0}
-  amount: 0
-  duration: 0
+  potionSound: {fileID: 8300000, guid: 44fe10129b22dc34f999437529b7f928, type: 3}
+  catSoundPotion: {fileID: 8300000, guid: daf10cdfd991223419e0240195aefd5a, type: 3}

@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class ChestScript : MonoBehaviour
 {
-    public List<GameObject> itemDrops = new List<GameObject>();
+	[SerializeField] private AudioClip chestOpeningSound;
+	public List<GameObject> itemDrops = new List<GameObject>();
     public GameObject HP_Potion_Prefab;
     public GameObject MP_Potion_Prefab;
     public GameObject Speed_Potion_Prefab;
@@ -46,7 +47,8 @@ public class ChestScript : MonoBehaviour
 
     private void OpenChest()
     {
-        _animator.SetBool("IsOpen", true);
+		SoundManager.instance.PlaySound(chestOpeningSound);
+		_animator.SetBool("IsOpen", true);
         isOpen = true;
         Invoke("ItemDrop", 1.15f);
         Invoke("DespawnChest", 1f);

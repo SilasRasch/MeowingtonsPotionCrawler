@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037a1c7b8b081ef4ebcc39c0390e2639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestOpeningSound: {fileID: 8300000, guid: 8511265976aabf942b7e5355bae7c14a, type: 3}
   itemDrops: []
   HP_Potion_Prefab: {fileID: 6564706028737294633, guid: b791259e0124e404daedefd78a96fbd2, type: 3}
   MP_Potion_Prefab: {fileID: 1103984672961545079, guid: c5e2ba5a94c089649bf547f311e6e476, type: 3}
