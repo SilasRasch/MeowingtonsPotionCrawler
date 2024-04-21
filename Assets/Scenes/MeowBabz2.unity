@@ -230,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 1000
+  enemyDamageTaken: {fileID: 8300000, guid: 7af7fbe7ec1a4084eaffd7afa060348f, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 4c6d58214cafcea49a3dc9d934b4841b, type: 3}
 --- !u!114 &30433517
 MonoBehaviour:
   m_ObjectHideFlags: 0

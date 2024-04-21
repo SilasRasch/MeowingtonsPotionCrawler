@@ -178,6 +178,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 120
   enemyDamageTaken: {fileID: 8300000, guid: 715229540db082a43a53878fc5ef536c, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: b0504b7d5d61ffb49bb76da6fb4790eb, type: 3}
 --- !u!114 &-1248580365628014997
 MonoBehaviour:
   m_ObjectHideFlags: 0
