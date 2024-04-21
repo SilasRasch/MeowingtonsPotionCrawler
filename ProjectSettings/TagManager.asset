@@ -55,6 +55,9 @@ TagManager:
   - name: Walls
     uniqueID: 933255835
     locked: 0
+  - name: Water
+    uniqueID: 3732325501
+    locked: 0
   - name: Collisions
     uniqueID: 1246983133
     locked: 0
