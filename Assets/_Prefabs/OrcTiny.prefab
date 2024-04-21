@@ -187,5 +187,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1
-  MaxDistance: 1
+  MaxDistance: 6
   MinDistance: 0.1

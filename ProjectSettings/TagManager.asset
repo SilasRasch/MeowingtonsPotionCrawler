@@ -8,6 +8,7 @@ TagManager:
   - PlayerStaff
   - Fireball
   - Potion
+  - Undefined
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - chests
   - bothcameras
   - minimap
-  - 
+  - Fireball
   - 
   - 
   - 

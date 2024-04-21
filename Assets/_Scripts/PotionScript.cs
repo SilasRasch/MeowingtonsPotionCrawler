@@ -5,13 +5,10 @@ using UnityEngine;
 
 public class PotionScript : MonoBehaviour
 {
-    public ChestScript chestScript;
-    public PlayerStats playerStats;
-    public PlayerMovement playerMovement;
-    public AttackScript attackScript;
-
-    public float amount;
-    public float duration;
+    private ChestScript chestScript;
+    private PlayerStats playerStats;
+    private PlayerMovement playerMovement;
+    private AttackScript attackScript;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +43,6 @@ public class PotionScript : MonoBehaviour
             }
             if (gameObject.name.Contains("Speed"))
             {
-                // Duration ???
-                // Other fix ???
                 playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
                 if (playerMovement._speed < 3f)
                 {
@@ -66,17 +61,5 @@ public class PotionScript : MonoBehaviour
             
         }
     }
-
-    //private void SpeedPotFunction(float duration)
-    //{
-    //    playerMovement._speed += 1f;
-    //    StartCoroutine(ResetSpeedAfterDuration(duration));
-    //}
-
-    //public void ResetSpeed()
-    //{
-    //    yield return new WaitForSeconds(duration);
-    //    playerMovement._speed = 2f;
-    //}
 
 }
