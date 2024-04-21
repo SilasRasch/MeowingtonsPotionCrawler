@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class AttackScript : MonoBehaviour
@@ -9,11 +10,15 @@ public class AttackScript : MonoBehaviour
     private CapsuleCollider2D hitbox;
     private GameObject staff;
     private Vector3 rotation;
+    private float timer;
+    private bool CanHit;
 
     public float baseDamage = 20;
 
     private void Start()
     {
+        timer = 0;
+        CanHit = true;
         staff = GameObject.Find("Player_Staff");
         animator = staff.GetComponent<Animator>();
         hitbox = staff.transform.Find("HitBox").GetComponent<CapsuleCollider2D>();
@@ -21,7 +26,18 @@ public class AttackScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) // Attack on Space key press.
+        if (!CanHit)
+        {        
+            timer += Time.deltaTime;
+
+            if (timer > 0.2f)
+            {
+                CanHit = true;
+                timer = 0;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && CanHit) // Attack on Space key press.
         {
             SoundManager.instance.PlaySound(MeleeAttackSound);
             //Debug.Log("Attack");
@@ -29,6 +45,9 @@ public class AttackScript : MonoBehaviour
             Invoke("ActivateHitbox", 0.2f); // Activate hitbox after 0.2 seconds.
             
             Invoke("DeactivateHitbox", 0.4f); // Deactivate hitbox after 0.4 seconds.
+
+            CanHit = false;
+            timer = 0;
         }
     }
 
