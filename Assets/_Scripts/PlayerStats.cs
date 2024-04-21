@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public Slider manaBar_Slider;
 
     private float timer;
+    private float dmgSoundTimer;
 
 
 	[SerializeField] private AudioClip catSoundDamageTaken;
@@ -22,6 +23,7 @@ public class PlayerStats : MonoBehaviour
 	void Start()
     {
         timer = 0;
+        dmgSoundTimer = 1.5f;
         health = maxHealth;
         mana = maxMana;
     }
@@ -55,7 +57,16 @@ public class PlayerStats : MonoBehaviour
             Die();
         }
         UpdateHealthBar();
-		SoundManager.instance.PlaySound(catSoundDamageTaken);
+
+        // Sound
+        dmgSoundTimer += Time.deltaTime;
+
+        if (dmgSoundTimer > 1.5f)
+        {
+            SoundManager.instance.PlaySound(catSoundDamageTaken);
+            dmgSoundTimer = 0;
+        }
+		
 	}
 
     public void Heal(float healAmount)

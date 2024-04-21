@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 1000
-  enemyDamageTaken: {fileID: 0}
+  enemyDamageTaken: {fileID: 8300000, guid: 7af7fbe7ec1a4084eaffd7afa060348f, type: 3}
 --- !u!114 &30433517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24275,7 +24275,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4.5
+  orthographic size: 5.60141
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -24899,7 +24899,7 @@ MonoBehaviour:
   mana: 0
   maxMana: 100
   manaBar_Slider: {fileID: 2018061246}
-  catSoundDamageTaken: {fileID: 0}
+  catSoundDamageTaken: {fileID: 8300000, guid: 498d13e7647456a4c9ceeda57ba1a8e2, type: 3}
 --- !u!1001 &705255506
 PrefabInstance:
   m_ObjectHideFlags: 0
