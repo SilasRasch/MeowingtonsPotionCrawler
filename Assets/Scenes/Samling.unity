@@ -24017,8 +24017,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06257171, y: 0.014016195}
-  m_Size: {x: 0.12755688, y: 0.876352}
+  m_Offset: {x: 0.068842314, y: 0.021350786}
+  m_Size: {x: 0.14009789, y: 0.8910213}
   m_Direction: 0
 --- !u!114 &466861413
 MonoBehaviour:
@@ -24058,7 +24058,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &488799905
 GameObject:
   m_ObjectHideFlags: 0
@@ -24270,8 +24270,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

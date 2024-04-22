@@ -42,8 +42,9 @@ public class AttackScript : MonoBehaviour
             SoundManager.instance.PlaySound(MeleeAttackSound);
             //Debug.Log("Attack");
             //animator.SetTrigger("MeleeAttack");
-            Invoke("ActivateHitbox", 0.2f); // Activate hitbox after 0.2 seconds.
-            
+            //Invoke("ActivateHitbox", 0.2f); // Activate hitbox after 0.2 seconds.
+            ActivateHitbox();
+
             Invoke("DeactivateHitbox", 0.4f); // Deactivate hitbox after 0.4 seconds.
 
             CanHit = false;
