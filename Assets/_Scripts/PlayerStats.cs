@@ -51,11 +51,12 @@ public class PlayerStats : MonoBehaviour
     {
         UpdateHealthBar();
 
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
+        //if (Application.isEditor)
+        //{
+        //    UnityEditor.EditorApplication.isPlaying = false;
+        //}
+        //else
+        if (!Application.isEditor)
         {
             Application.Quit();
         }
