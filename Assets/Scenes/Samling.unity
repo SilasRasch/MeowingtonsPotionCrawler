@@ -232,6 +232,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 1000
   enemyDamageTaken: {fileID: 8300000, guid: 7af7fbe7ec1a4084eaffd7afa060348f, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 4c6d58214cafcea49a3dc9d934b4841b, type: 3}
 --- !u!114 &30433517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24269,8 +24270,8 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 0
+    height: 0
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
