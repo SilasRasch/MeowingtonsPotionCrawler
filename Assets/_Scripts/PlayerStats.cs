@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
 
         if (timer >= 1)
         {
-            Heal(2);
+            Heal(1);
             RestoreMana(2);
             timer = 0;
         }
